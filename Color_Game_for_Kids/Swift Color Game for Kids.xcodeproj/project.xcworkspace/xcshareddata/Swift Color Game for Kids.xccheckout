@@ -10,43 +10,31 @@
 	<string>Swift Color Game for Kids</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>119ACF4FAB6CB31AC86D740E720D538477620120</key>
-		<string>github.com:rugbyprof/msu-swift.git</string>
-		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>github.com:Alamofire/Alamofire.git</string>
+		<key>B06279451CC66CA22825960A84343CCF65A3BAE6</key>
+		<string>https://github.com/tsoteen89/4443-Swift-Programming-travisosteen.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Swift Color Game for Kids/Swift Color Game for Kids.xcodeproj</string>
+	<string>Color_Game_for_Kids/Swift Color Game for Kids.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>119ACF4FAB6CB31AC86D740E720D538477620120</key>
+		<key>B06279451CC66CA22825960A84343CCF65A3BAE6</key>
 		<string>../../..</string>
-		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>../../../Swift%20Color%20Game%20for%20Kids/Swift%20Color%20Game%20for%20Kids/Alamofire</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:rugbyprof/msu-swift.git</string>
+	<string>https://github.com/tsoteen89/4443-Swift-Programming-travisosteen.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>119ACF4FAB6CB31AC86D740E720D538477620120</string>
+	<string>B06279451CC66CA22825960A84343CCF65A3BAE6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
+			<string>B06279451CC66CA22825960A84343CCF65A3BAE6</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Alamofire</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>119ACF4FAB6CB31AC86D740E720D538477620120</string>
-			<key>IDESourceControlWCCName</key>
-			<string>msu-swift</string>
+			<string>4443-Swift-Programming-travisosteen</string>
 		</dict>
 	</array>
 </dict>
