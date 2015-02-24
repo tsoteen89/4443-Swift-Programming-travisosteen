@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     
@@ -22,8 +23,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnAnswer3OUTLET: UIButton!
     
     var buttonAnswer = 0
+    var lastButtonAnswer = 0
     
     var colorNumber = 0
+    var lastColorNumber = 0
     
     var button1Correct = false
     var button2Correct = false
@@ -44,24 +47,25 @@ class ViewController: UIViewController {
         ["Pink":0xFF6EB4],
         ["Purple":0x8968CD],
         ["Gray":0xBEBEBE],
-        ["Yellow":0xFFFF00]
+        ["Yellow":0xFFFF00],
+        ["Gray2":0xC0C0C0]
     ]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         matchColorLogic()
         
         //Read from a file example:
-        let read : String? = File.read("colors.json")
-        //println(read!)
+        let read : String? = File.read("Program_1_Starter/colors.json")
+        //println(read)
         
         //Write to  a file example:
-        let write : Bool = File.write("/Volumes/1_TB_HDD/griffin/Desktop/colors2.json", content: "String to write")
-        println(write)
+        let write : Bool = File.write("Program_1_Starter/colors2.json", content: "String to write")
+        //println(write)
         
         //Setup the url to get colors from
-        let url = "https://raw.githubusercontent.com/rugbyprof/msu-swift/master/Swift%20Color%20Game%20for%20Kids/Swift%20Color%20Game%20for%20Kids/colors.json?token=AA_qiMX6aezCbZRcASGFVWX5IFfGJ2pwks5U2nY9wA%3D%3D"
-
+        let url = "http://cs.mwsu.edu/~griffin/swift/colors.json"
+        
         //Run alamo library get request to grab the json data
         request(.GET, url)
             .responseJSON { (req, res, json, error) in
@@ -84,7 +88,6 @@ class ViewController: UIViewController {
                     }
                 }
                 
-                //Question: How do I access a single value directly?
         }
         
         
@@ -93,7 +96,7 @@ class ViewController: UIViewController {
         var jsonDict = myJson.parseJSON(json)
         println("jsonDict")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -139,8 +142,19 @@ class ViewController: UIViewController {
     
     
     func matchColorLogic() -> Bool{
+        
         buttonAnswer = Int(arc4random_uniform(3))
+        while buttonAnswer == lastButtonAnswer {
+            buttonAnswer = Int(arc4random_uniform(3))
+        }
+        lastButtonAnswer = buttonAnswer
+        
+        
         colorNumber = Int(arc4random_uniform(10))
+        while colorNumber == lastButtonAnswer {
+            colorNumber = Int(arc4random_uniform(10))
+        }
+        lastColorNumber = colorNumber
         
         changeColor()
         
@@ -172,12 +186,12 @@ class ViewController: UIViewController {
         
         return true;
     }
-
+    
     
     func changeColor() -> Bool{
         
         println(UIColor.brownColor())
-
+        
         if(colorNumber == 0){
             //lblChangeColor.backgroundColor = UIColor.redColor()
             lblChangeColor.backgroundColor = UIColorFromRGB(0xFF0000)
@@ -226,7 +240,7 @@ class ViewController: UIViewController {
             alpha: CGFloat(1.0)
         )
     }
-
+    
 }
 
 /********************************************************************************************
@@ -262,11 +276,11 @@ class File {
 *   parseJSON(NSData) returns Dictionary
 ********************************************************************************************/
 class myJson {
-
+    
     class func getJSON(urlToRequest: String) -> NSData{
         return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
     }
-
+    
     class func parseJSON(inputData: NSData) -> NSDictionary{
         var error: NSError?
         var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
