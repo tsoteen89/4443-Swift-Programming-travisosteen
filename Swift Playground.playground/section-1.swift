@@ -43,3 +43,29 @@ locationB.longi = 3
 
 println(locationB.lati)
 
+
+var redIntString = "0xFF0000"
+
+var redUInt = redIntString.unicodeScalars
+
+var redUIntTrue: UInt = 0xFF0000
+
+var redInt = 16711680
+
+var redIntConverted = UInt(redInt)
+
+
+var redString = "FF0000"
+
+let scanner = NSScanner(string: redString)
+var result : UInt32 = 0
+if scanner.scanHexInt(&result) {
+    println(result)
+}
+
+
+
+
+
+
+

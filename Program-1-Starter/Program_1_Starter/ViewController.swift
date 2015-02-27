@@ -51,6 +51,8 @@ class ViewController: UIViewController {
         ["Gray2":0xC0C0C0]
     ]
     
+    var parsedJson = myJson.parseJSON(myJson.getJSON("http://cs.mwsu.edu/~griffin/swift/colors.json"))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         matchColorLogic()
@@ -77,15 +79,28 @@ class ViewController: UIViewController {
                 else {
                     println("Success: \(url)")
                     var json = JSON(json!)
+                    
                     for (key: String, subJson: JSON) in json {
-                        println(key)
+                        //println(key)
                     }
+
                     
                     //or
                     
                     for (key,val) in json{
-                        println("\(key):\(val)")
+                        //println("\(key):\(val)")
                     }
+                    
+                    /*
+                    for (key,val) in json{
+                        let scanner = NSScanner(string: val)
+                        var result : UInt32 = 0
+                        if scanner.scanHexInt(&result) {
+                            println(result)
+                        }
+                        val = result
+                    }
+                    */
                 }
                 
         }
@@ -94,7 +109,21 @@ class ViewController: UIViewController {
         //Another way to read the json file
         let json = myJson.getJSON(url)
         var jsonDict = myJson.parseJSON(json)
-        println("jsonDict")
+        println("parsedJson")
+        println(parsedJson["red"])
+        
+        var redStringA = parsedJson["red"]?.string
+        
+        println("Red String A is now \(redStringA)")
+        /*
+        var redConverted = redStringA?.string
+        
+        println("Red Converted \(redStringA)")
+        
+        var redAgain = redConverted?.toInt()
+        
+        println("Red Converted to int \(redAgain)")
+        */
     }
     
     override func didReceiveMemoryWarning() {
@@ -192,9 +221,19 @@ class ViewController: UIViewController {
         
         println(UIColor.brownColor())
         
+        var redString = "FF0000"
+        
+        let scanner = NSScanner(string: redString)
+        var result : UInt32 = 0
+        if scanner.scanHexInt(&result) {
+            println(result)
+        }
+        
+        var redUInt = UInt(result)
+ 
         if(colorNumber == 0){
             //lblChangeColor.backgroundColor = UIColor.redColor()
-            lblChangeColor.backgroundColor = UIColorFromRGB(0xFF0000)
+            lblChangeColor.backgroundColor = UIColorFromRGB(redUInt)
         }
         if(colorNumber == 1){
             lblChangeColor.backgroundColor = UIColor.greenColor()
