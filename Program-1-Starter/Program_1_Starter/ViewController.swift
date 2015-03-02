@@ -302,8 +302,10 @@ class ViewController: UIViewController {
             self.myColors.addColor(col,hex:hex,red:r,green:g,blue:b,hue1:h1,sat1:s1,hue2:h2,sat2:s2,value:v,lightness:l)
         }
         self.myColors.printColors()
+        /*
         println(self.myColors.fetchColorName("#CE2029"))
         println(self.myColors.fetchRGB("#CE2029"))
+        */
     }
     
 }

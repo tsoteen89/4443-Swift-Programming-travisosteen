@@ -210,9 +210,12 @@ class Colors {
     *    Void
     ********************************************************************************************/
     func printColors(){
-        println(colorsTupleArray.count)
-        println(colorsTupleArray[430].hexValue)
-        println(colorsTupleArray[430].colorName)
+        println("Number of Colors: \(colorsTupleArray.count)")
+        
+        for color in colorsTupleArray {
+            println("Color Name: \(color.colorName)")
+            println("Color Hex: \(color.hexValue)")
+        }
     }
 
 }
