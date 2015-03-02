@@ -65,7 +65,24 @@ if scanner.scanHexInt(&result) {
 
 
 
+//Old Code
 
+/*
+var redString = "FF0000"
+
+let scanner = NSScanner(string: redString)
+var result : UInt32 = 0
+if scanner.scanHexInt(&result) {
+    println(result)
+}
+
+var redUInt = UInt(result)
+
+if(colorNumber == 0){
+    //lblChangeColor.backgroundColor = UIColor.redColor()
+    lblChangeColor.backgroundColor = UIColorFromRGB(redUInt)
+}
+*/
 
 
 
