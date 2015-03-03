@@ -35,6 +35,10 @@ class ViewController: UIViewController {
     var colorNumber = 0
     var lastColorNumber = 0
     
+    var lastColorName = "Null"
+    var colorNameTwo = "Null"
+    var colorNameThree = "Null"
+    
     var button1Correct = false
     var button2Correct = false
     var button3Correct = false
@@ -95,13 +99,14 @@ class ViewController: UIViewController {
                     //Example usage of the Colors class
                     var randColor = self.myColors.fetchRandomColor()
                     
-                    println("\(randColor.hexValue) : \(randColor.colorName) ")
+                    println("EXAMPLE USE: \(randColor.hexValue) : \(randColor.colorName) ")
                     
                     var uicolor = self.myColors.hexStringToUIColor(randColor.hexValue)
                     
-                    println(uicolor)
+                    println("UI COLOR EXAMPLE: \(uicolor)")
                 }
         }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -150,18 +155,28 @@ class ViewController: UIViewController {
     
     func matchColorLogic() -> Bool{
         
+        
         buttonAnswer = Int(arc4random_uniform(3))
         while buttonAnswer == lastButtonAnswer {
             buttonAnswer = Int(arc4random_uniform(3))
         }
         lastButtonAnswer = buttonAnswer
+
         
-        
-        colorNumber = Int(arc4random_uniform(10))
-        while colorNumber == lastButtonAnswer {
-            colorNumber = Int(arc4random_uniform(10))
+        var randomColor = self.myColors.fetchRandomColor()
+        while randomColor.colorName == lastColorName {
+            randomColor = self.myColors.fetchRandomColor()
         }
-        lastColorNumber = colorNumber
+        lastColorName = randomColor.colorName
+        
+        colorNameTwo = self.myColors.fetchRandomColor().colorName
+        colorNameThree = self.myColors.fetchRandomColor().colorName
+        
+        while colorNameTwo == lastColorName || colorNameThree == lastColorName || colorNameTwo == colorNameThree {
+            colorNameTwo = self.myColors.fetchRandomColor().colorName
+            colorNameThree = self.myColors.fetchRandomColor().colorName
+        }
+        
         
         changeColor()
         
@@ -170,24 +185,24 @@ class ViewController: UIViewController {
         var next = (colorNumber + 1) % colorNames.count
         
         if(buttonAnswer == 0){
-            btnAnswer1OUTLET.setTitle(colorNames[color], forState: UIControlState.Normal)
-            btnAnswer2OUTLET.setTitle(colorNames[prev], forState: UIControlState.Normal)
-            btnAnswer3OUTLET.setTitle(colorNames[next], forState: UIControlState.Normal)
+            btnAnswer1OUTLET.setTitle(lastColorName, forState: UIControlState.Normal)
+            btnAnswer2OUTLET.setTitle(colorNameTwo, forState: UIControlState.Normal)
+            btnAnswer3OUTLET.setTitle(colorNameThree, forState: UIControlState.Normal)
             button1Correct = true;
             
         }
         
         if(buttonAnswer == 1){
-            btnAnswer1OUTLET.setTitle(colorNames[prev], forState: UIControlState.Normal)
-            btnAnswer2OUTLET.setTitle(colorNames[color], forState: UIControlState.Normal)
-            btnAnswer3OUTLET.setTitle(colorNames[next], forState: UIControlState.Normal)
+            btnAnswer1OUTLET.setTitle(colorNameTwo, forState: UIControlState.Normal)
+            btnAnswer2OUTLET.setTitle(lastColorName, forState: UIControlState.Normal)
+            btnAnswer3OUTLET.setTitle(colorNameThree, forState: UIControlState.Normal)
             button2Correct = true
         }
         
         if(buttonAnswer == 2){
-            btnAnswer1OUTLET.setTitle(colorNames[next], forState: UIControlState.Normal)
-            btnAnswer2OUTLET.setTitle(colorNames[prev], forState: UIControlState.Normal)
-            btnAnswer3OUTLET.setTitle(colorNames[color], forState: UIControlState.Normal)
+            btnAnswer1OUTLET.setTitle(colorNameTwo, forState: UIControlState.Normal)
+            btnAnswer2OUTLET.setTitle(colorNameThree, forState: UIControlState.Normal)
+            btnAnswer3OUTLET.setTitle(lastColorName, forState: UIControlState.Normal)
             button3Correct = true
         }
         
@@ -197,9 +212,14 @@ class ViewController: UIViewController {
     
     func changeColor() -> Bool{
         
+        lblChangeColor.backgroundColor = hexStringToUIColor(self.myColors.fetchHexValue(lastColorName))
+        
+        /*
         if(colorNumber == 0){
             //lblChangeColor.backgroundColor = UIColor.redColor()
-            lblChangeColor.backgroundColor = UIColorFromRGB(0xFF0000)
+            //lblChangeColor.backgroundColor = UIColorFromRGB(0xFF0000)
+            lblChangeColor.backgroundColor = uifRose
+            
         }
         if(colorNumber == 1){
             lblChangeColor.backgroundColor = UIColor.greenColor()
@@ -228,6 +248,7 @@ class ViewController: UIViewController {
         if(colorNumber == 9){
             lblChangeColor.backgroundColor = UIColor.yellowColor()
         }
+        */
         
         lblTotalCorrect.text = "Total Correct: \(totalCorrect)"
         
