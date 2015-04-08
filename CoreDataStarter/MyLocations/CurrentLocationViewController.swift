@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -17,6 +18,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var tagButton: UIButton!
   @IBOutlet weak var getButton: UIButton!
+  var managedObjectContext: NSManagedObjectContext!
 
   let locationManager = CLLocationManager()
 
@@ -254,14 +256,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     }
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "TagLocation" {
-      let navigationController = segue.destinationViewController as UINavigationController
-      let controller = navigationController.topViewController as LocationDetailsViewController
-      
-      controller.coordinate = location!.coordinate
-      controller.placemark = placemark
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TagLocation" {
+            let navigationController = segue.destinationViewController as UINavigationController
+            let controller = navigationController.topViewController as LocationDetailsViewController
+            
+            controller.coordinate = location!.coordinate
+            controller.placemark = placemark
+            controller.managedObjectContext = managedObjectContext
+        }
     }
-  }
 
 }
