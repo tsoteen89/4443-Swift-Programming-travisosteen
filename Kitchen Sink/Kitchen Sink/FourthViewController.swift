@@ -22,6 +22,8 @@ class FourthViewController: UIViewController {
     var currentX:CGFloat
     var currentY:CGFloat
     
+    var timer: NSTimer? = nil
+    
     let tapRec = UITapGestureRecognizer()
     
 
@@ -123,11 +125,36 @@ class FourthViewController: UIViewController {
             view.removeFromSuperview()
         }
         
-        for label in newOrder{
-            self.view.addSubview(label)
-            self.labelContainer.append(label)
-            println("sleeping")
-        }
+//        for label in newOrder{
+//            self.view.addSubview(label)
+//            sleep(2)
+//            self.labelContainer.append(label)
+//            println("sleeping")
+//        }
+        sleep(1)
+        addColorsBack(newOrder)
+
+    }
+    
+    func colorTimer(){
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.50, target: self, selector: "addColorsBack", userInfo: nil, repeats: true)
+    }
+    
+    func addColorsBack(newOrder: [UILabel]){
+        UIView.animateWithDuration(2, animations: {
+            for label in newOrder{
+                UIView.animateWithDuration(2, animations: {
+                    self.view.addSubview(label)
+                })
+                UIView.animateWithDuration(2, animations: {
+                    self.labelContainer.append(label)
+                })
+            }
+        })
     }
     
 }
+
+
+
+
