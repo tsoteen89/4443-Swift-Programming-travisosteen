@@ -51,7 +51,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     
     override func viewWillAppear(animated: Bool) {
         // Get a reference to the model data from the custom tab bar controller.
-        let model = (self.tabBarController as CustomTabBarController).model
+        let model = (self.tabBarController as! CustomTabBarController).model
         model.lattitude = latitudeLabel!.text!
         model.longitutde = longitudeLabel!.text!
     }
@@ -74,7 +74,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     
     func locationManager(manager: CLLocationManager!,
         didUpdateLocations locations: [AnyObject]!) {
-        let newLocation = locations.last as CLLocation
+        let newLocation = locations.last as! CLLocation
         println("didUpdateLocations \(newLocation)")
         latitudeLabel.text = String(format: "%.8f", newLocation.coordinate.latitude)
         longitudeLabel.text = String(format: "%.8f", newLocation.coordinate.longitude)

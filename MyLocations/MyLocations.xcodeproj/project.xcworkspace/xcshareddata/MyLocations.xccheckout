@@ -14,6 +14,8 @@
 		<string>github.com:rugbyprof/msu-swift.git</string>
 		<key>349ED882E60AF891EDF90C51D4B3543FCD5DD1D7</key>
 		<string>https://github.com/tsoteen89/Playground.git</string>
+		<key>B06279451CC66CA22825960A84343CCF65A3BAE6</key>
+		<string>https://github.com/tsoteen89/4443-Swift-Programming-travisosteen.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MyLocations/MyLocations.xcodeproj</string>
@@ -22,16 +24,26 @@
 		<key>119ACF4FAB6CB31AC86D740E720D538477620120</key>
 		<string>../../../../msu-swift</string>
 		<key>349ED882E60AF891EDF90C51D4B3543FCD5DD1D7</key>
+		<string>../../../../Playground</string>
+		<key>B06279451CC66CA22825960A84343CCF65A3BAE6</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/tsoteen89/Playground.git</string>
+	<string>https://github.com/tsoteen89/4443-Swift-Programming-travisosteen.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>349ED882E60AF891EDF90C51D4B3543FCD5DD1D7</string>
+	<string>B06279451CC66CA22825960A84343CCF65A3BAE6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B06279451CC66CA22825960A84343CCF65A3BAE6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>4443-Swift-Programming-travisosteen</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

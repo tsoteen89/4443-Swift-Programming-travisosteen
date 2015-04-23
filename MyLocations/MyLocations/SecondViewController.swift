@@ -21,7 +21,7 @@ class SecondViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         // Get a reference to the model data from the custom tab bar controller.
-        let model = (self.tabBarController as CustomTabBarController).model
+        let model = (self.tabBarController as! CustomTabBarController).model
         SecondViewLattitudeLabel.text = model.lattitude
         SecondViewLongitudeLabel.text = model.longitutde
     }
