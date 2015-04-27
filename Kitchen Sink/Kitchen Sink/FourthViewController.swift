@@ -138,13 +138,16 @@ class FourthViewController: UIViewController {
         let transitionOptions = UIViewAnimationOptions.TransitionFlipFromBottom
         println("Got Called \(self.newOrderCount)")
         
-        UIView.transitionWithView(newOrder[self.newOrderCount], duration: 1.0, options: transitionOptions, animations: {
+        UIView.transitionWithView(newOrder[self.newOrderCount], duration: 0.1, options: transitionOptions, animations: {
             self.view.addSubview(newOrder[self.newOrderCount])
             self.labelContainer.append(newOrder[self.newOrderCount])
             self.newOrderCount++
         }, completion: { finished in
             if(self.newOrderCount < newOrder.count){
                 self.replaceColors(newOrder)
+            }
+            else{
+                self.newOrderCount = 0
             }
         })
         
