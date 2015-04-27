@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kitchen Sink/FourthViewController.swift"
+            timestampString = "451846823.447201"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "replaceColors(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kitchen_Sink.FourthViewController.replaceColors (Kitchen_Sink.FourthViewController)(Swift.Array&lt;ObjectiveC.UILabel&gt;) -&gt; ()"
+                  moduleName = "Kitchen Sink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fapppo/Documents/Programs/4443-Swift-Programming-travisosteen/Kitchen%20Sink/Kitchen%20Sink/FourthViewController.swift"
+                  timestampString = "451846112.281402"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kitchen_Sink.FourthViewController.(replaceColors (Kitchen_Sink.FourthViewController) -&gt; (Swift.Array&lt;ObjectiveC.UILabel&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "Kitchen Sink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fapppo/Documents/Programs/4443-Swift-Programming-travisosteen/Kitchen%20Sink/Kitchen%20Sink/FourthViewController.swift"
+                  timestampString = "451846112.284285"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

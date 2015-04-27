@@ -16,6 +16,7 @@ class FourthViewController: UIViewController {
     var screenHeight:CGFloat
     var boxWidth:CGFloat
     var boxHeight: CGFloat
+    var newOrderCount = 0
     
     var labelContainer:[UILabel]
     
@@ -98,7 +99,7 @@ class FourthViewController: UIViewController {
         
 //        view.subviews.map({ $0.removeFromSuperview() })
         
-        let lastView = self.view.subviews.last
+        let lastView: AnyObject? = self.view.subviews.last
         lastView?.removeFromSuperview()
     }
     
@@ -112,7 +113,7 @@ class FourthViewController: UIViewController {
     func reorderColors(){
         
         println("in reorder")
-        
+        let transitionOptions = UIViewAnimationOptions.TransitionCrossDissolve
         var newOrder = [UILabel]()
         
         while self.labelContainer.count > 0 {
@@ -121,37 +122,35 @@ class FourthViewController: UIViewController {
         
         self.labelContainer.removeAll(keepCapacity: false)
         
-        for view in self.view.subviews {
-            view.removeFromSuperview()
-        }
+        UIView.transitionWithView(self.view, duration: 1.0, options: transitionOptions, animations: {
+            for view in self.view.subviews {
+                view.removeFromSuperview()
+            }
+        }, completion: { finished in
+                self.replaceColors(newOrder)
+        })
         
-//        for label in newOrder{
-//            self.view.addSubview(label)
-//            sleep(2)
-//            self.labelContainer.append(label)
-//            println("sleeping")
-//        }
-        sleep(1)
-        addColorsBack(newOrder)
+
 
     }
     
-    func colorTimer(){
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.50, target: self, selector: "addColorsBack", userInfo: nil, repeats: true)
-    }
-    
-    func addColorsBack(newOrder: [UILabel]){
-        UIView.animateWithDuration(2, animations: {
-            for label in newOrder{
-                UIView.animateWithDuration(2, animations: {
-                    self.view.addSubview(label)
-                })
-                UIView.animateWithDuration(2, animations: {
-                    self.labelContainer.append(label)
-                })
+    func replaceColors(newOrder: [UILabel]){
+        let transitionOptions = UIViewAnimationOptions.TransitionFlipFromBottom
+        println("Got Called \(self.newOrderCount)")
+        
+        UIView.transitionWithView(newOrder[self.newOrderCount], duration: 1.0, options: transitionOptions, animations: {
+            self.view.addSubview(newOrder[self.newOrderCount])
+            self.labelContainer.append(newOrder[self.newOrderCount])
+            self.newOrderCount++
+        }, completion: { finished in
+            if(self.newOrderCount < newOrder.count){
+                self.replaceColors(newOrder)
             }
         })
+        
+        
     }
+
     
 }
 
