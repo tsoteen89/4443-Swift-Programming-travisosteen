@@ -7,24 +7,16 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>72990C0B-F2B2-4AF6-BCFE-E18429BF16A8</string>
 	<key>IDESourceControlProjectName</key>
-	<string>MyLocations</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>119ACF4FAB6CB31AC86D740E720D538477620120</key>
-		<string>github.com:rugbyprof/msu-swift.git</string>
-		<key>349ED882E60AF891EDF90C51D4B3543FCD5DD1D7</key>
-		<string>https://github.com/tsoteen89/Playground.git</string>
 		<key>B06279451CC66CA22825960A84343CCF65A3BAE6</key>
 		<string>https://github.com/tsoteen89/4443-Swift-Programming-travisosteen.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MyLocations/MyLocations.xcodeproj</string>
+	<string>MyLocations/MyLocations.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>119ACF4FAB6CB31AC86D740E720D538477620120</key>
-		<string>../../../../msu-swift</string>
-		<key>349ED882E60AF891EDF90C51D4B3543FCD5DD1D7</key>
-		<string>../../../../Playground</string>
 		<key>B06279451CC66CA22825960A84343CCF65A3BAE6</key>
 		<string>../../..</string>
 	</dict>
@@ -43,22 +35,6 @@
 			<string>B06279451CC66CA22825960A84343CCF65A3BAE6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>4443-Swift-Programming-travisosteen</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>119ACF4FAB6CB31AC86D740E720D538477620120</string>
-			<key>IDESourceControlWCCName</key>
-			<string>msu-swift</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>349ED882E60AF891EDF90C51D4B3543FCD5DD1D7</string>
-			<key>IDESourceControlWCCName</key>
-			<string>Playground</string>
 		</dict>
 	</array>
 </dict>
